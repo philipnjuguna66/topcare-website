@@ -26,6 +26,7 @@ return new class extends Migration
             $table->text('map')->nullable();
             $table->string('mutation')->nullable();
             $table->string('meta_description');
+            $table->json('extra')->nullable();
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
 
 
-            $table->string('price')->change();
-            $table->string('cta')->fulltext();
+            $table->string('price')->nullable()->change();
+            $table->string('cta')->nullable()->fulltext();
 
         });
     }
@@ -28,7 +28,7 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
 
 
-            $table->dropColumn('cta')->fulltext();
+            $table->dropColumn('cta')->nullable()->fulltext();
 
         });
     }
