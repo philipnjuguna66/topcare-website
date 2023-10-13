@@ -29,6 +29,7 @@ enum SectionEnum: string
     case ACCORDION_SECTION = 'accordion_section';
     case HTML_SECTION = 'html_section';
     case TEAM_SECTION = 'team_section';
+    case PARTNERS_SECTION = 'partners_section';
 
     public function sectionPath(): string
     {
@@ -52,6 +53,7 @@ enum SectionEnum: string
             static::ACCORDION_SECTION => 'templates.faqs.accordion',
             static::TEAM_SECTION => 'templates.teams.index',
             static::HTML_SECTION => 'templates.hero.html',
+            static::PARTNERS_SECTION => 'templates.partners.index',
             default => 'templates.hero.left',
         };
     }
