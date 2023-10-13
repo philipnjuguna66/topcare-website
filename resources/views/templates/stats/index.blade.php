@@ -18,7 +18,7 @@
                                 @foreach($section->extra['counts'] as $stat)
                                     <div class="flex flex-col gap-y-3 border-l border-secondary-900 pl-6">
                                         <dt class="text-sm leading-6 text-gray-50">{{ $stat['title'] }}</dt>
-                                        <div class="flex">
+                                        <div class="flex ">
                                             <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50"
                                                 x-data="animatedCounter( {{ $stat['count'] }}, 200, 0)"
                                                 x-text="Math.round(current.toFixed(2))"
@@ -29,7 +29,7 @@
                                             </dd>
 
                                             @if($stat['has_plus_icon'])
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary-50">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-center text-secondary-50">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
 
