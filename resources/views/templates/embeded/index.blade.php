@@ -1,5 +1,5 @@
 <section  class=" @if($section->extra['bg_white']  ) bg-white @endif">
-    <div class=" py-24 sm:py-12 mx-auto md:w-4/5">
+    <div class=" py-8 md:py-12 mx-auto md:w-4/5">
         <div {{ $animationEffect }}  class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $title }}</h2>
