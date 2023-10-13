@@ -1,4 +1,4 @@
-<section class="">
+<section class="mt-4">
     <img
         loading="lazy"
         class="w-full object-cover"
