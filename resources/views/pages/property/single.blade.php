@@ -113,8 +113,6 @@
 
             <livewire:project.website.similar-project :project="$page"/>
         </div>
-
-    </div>
     </div>
 
 </x-guest-layout>
