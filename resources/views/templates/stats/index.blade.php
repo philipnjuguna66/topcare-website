@@ -3,7 +3,7 @@
         <div class="mx-auto max-w-7xl sm:text-center">
 
             <div  {{ $animationEffect }}  class="grid grid-cols-1 md:grid-cols-2 gap-12 space-y-4 mt-4 py-4">
-                <img class="bg-gray-50 object-cover"
+                <img class="bg-gray-50 object-cover w-full py-24"
                      src="{{ url(Storage::url($section->extra['bg_image'])) }}"
                      loading="lazy"
                      alt="{{ $section->extra['heading'] }}">
