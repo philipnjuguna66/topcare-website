@@ -1,8 +1,7 @@
-<section class="mt-4">
+<section class="">
     <img
         loading="lazy"
-        class="w-full object-cover py-24"
-
+        class="w-full object-cover py-8"
         src="{{  \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}"
         alt="{{ settings('site_name') }}"
     >
