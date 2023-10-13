@@ -36,22 +36,10 @@
 
                                 @endif
                             </div>
-                    </div>
                         </dd>
                     </div>
                     @endforeach
-                    <div class="flex flex-col gap-y-3 border-l border-secondary-900/10 pl-6">
-                        <dt class="text-sm leading-6 text-gray-600"></dt>
-                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">3%</dd>
-                    </div>
-                    <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                        <dt class="text-sm leading-6 text-gray-600">Uptime guarantee</dt>
-                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">99.9%</dd>
-                    </div>
-                    <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                        <dt class="text-sm leading-6 text-gray-600">Paid out to creators</dt>
-                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">$70M</dd>
-                    </div>
+
                 </dl>
 
             </div>
