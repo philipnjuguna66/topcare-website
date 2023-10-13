@@ -23,4 +23,15 @@ trait TestimonialSectionConcern
 
         ]);
     }
+
+    protected function partnersSection(): Block
+    {
+        return Block::make('partners_section')->schema([
+            TextInput::make('heading')->required(),
+            TextInput::make('subheading')->nullable(),
+            Checkbox::make('bg_white')->label('White Background')->nullable(),
+
+
+        ]);
+    }
 }

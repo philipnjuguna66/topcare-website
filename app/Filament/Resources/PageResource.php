@@ -72,6 +72,7 @@ class PageResource extends Resource
                         static::build()->videoSection(),
                         static::build()->faqSection(),
                         static::build()->accordionSection(),
+                        static::build()->partners(),
                         static::build()->timeline(),
                         static::build()->teamSection(),
                         static::build()->heroLeftImage(),
@@ -89,7 +90,7 @@ class PageResource extends Resource
                     ->columns(3)
                     ->collapsed()
                 ->collapsible(),
-            ])->columns(1);
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
