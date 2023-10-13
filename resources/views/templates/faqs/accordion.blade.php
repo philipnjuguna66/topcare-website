@@ -1,5 +1,5 @@
 <div class="@if($section->extra['bg_white']  ) bg-white @endif  ">
-    <div class="mx-auto md:w-4/5 mt-2 max-w-7xl py-12 md:py-24 md:px-6 px-8">
+    <div class="mx-auto md:w-4/5 mt-2 max-w-7xl py-4 md:py-12 md:px-6 px-8">
 
         <div {{ $animationEffect }}  class="lg:mx-auto max-w-7xl px-6 lg:px-8">
             <div class="lg:mx-auto max-w-2xl text-center">
