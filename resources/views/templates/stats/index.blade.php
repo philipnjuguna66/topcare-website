@@ -1,5 +1,5 @@
 <div class="bg-white">
-    <div  class="mx-auto w-4.5 max-w-7xl">
+    <div  class="mx-auto w-4/5 max-w-7xl">
         <div {{ $animationEffect }}    class="grid grid-cols-5 gap-2">
             <img class="object-cover cols-span-2"
                  src="{{ url(Storage::url($section->extra['bg_image'])) }}"
