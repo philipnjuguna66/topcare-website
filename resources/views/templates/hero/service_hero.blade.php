@@ -1,4 +1,4 @@
-<div class="py-4 md:py-11 bg-gray-50">
+<div class="py-12 sm:py-8 bg-gray-50">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-7xl sm:text-center">
 
@@ -9,7 +9,7 @@
 
             <div>
                 <div class="py-2 dark:text-white">
-                 {{ $section->extra['subheading'] }}
+                    {{ $section->extra['subheading'] }}
                 </div>
 
 
@@ -21,18 +21,24 @@
                     </div>
                 @endforeach
 
-                @if(isset($section->extra['has_contact_form']) && $section->extra['has_contact_form'])
-                    <div class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
-                        <livewire:contact.book-site-visit/>
-                    </div>
-                @endif
+
 
 
             </div>
 
             <div class="filter bg-blend-multiply  mt-3 ">
+                @if(isset($section->extra['has_contact_form']) && $section->extra['has_contact_form'])
+                    <div class="">
+                        <livewire:contact.book-site-visit/>
+                    </div>
+                @else
 
-                <img src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}" class="object-cover py-20">
+                    <img
+                        loading="lazy"
+                        src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}" class="object-cover py-20">
+
+                @endif
+
             </div>
 
 

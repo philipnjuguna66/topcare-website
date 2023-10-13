@@ -45,12 +45,16 @@ trait HeroImageSectionConcern
             ->schema([
                 TextInput::make('heading')->reactive(),
                 Textarea::make('subheading')->reactive(),
-                FileUpload::make('image')->preserveFilenames()->required(),
+                Checkbox::make('has_contact_form'),
+                FileUpload::make('image')
+                    ->preserveFilenames()
+                    ->hidden(fn(\Closure $get) =>  $get("has_contact_form"))
+                    ->required(fn(\Closure $get) => ! $get("has_contact_form")),
                 Repeater::make('sections')
                     ->schema([
                         RichEditor::make('content')
                     ]),
-                Checkbox::make('has_contact_form'),
+
             ]);
     }
     public function htmlSection(): Block
