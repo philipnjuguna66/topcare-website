@@ -11,15 +11,15 @@
                 <div class="">
                     <div class="">
                         <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
-                            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $section->extra['heading'] }}</h2>
-                            <p class="mt-6 text-lg leading-8 text-gray-600">{{ $section->extra['heading'] }}.</p>
+                            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">{{ $section->extra['heading'] }}</h2>
+                            <p class="mt-6 text-lg leading-8 text-gray-50">{{ $section->extra['heading'] }}.</p>
 
                             <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
                                 @foreach($section->extra['counts'] as $stat)
                                     <div class="flex flex-col gap-y-3 border-l border-secondary-900/10 pl-6">
-                                        <dt class="text-sm leading-6 text-gray-600">{{ $stat['title'] }}</dt>
+                                        <dt class="text-sm leading-6 text-gray-50">{{ $stat['title'] }}</dt>
                                         <div class="flex">
-                                            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900"
+                                            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50"
                                                 x-data="animatedCounter( {{ $stat['count'] }}, 200, 0)"
                                                 x-text="Math.round(current.toFixed(2))"
                                                 x-intersect:enter="updatecounter"
