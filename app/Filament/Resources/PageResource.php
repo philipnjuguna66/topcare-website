@@ -72,7 +72,7 @@ class PageResource extends Resource
                         static::build()->videoSection(),
                         static::build()->faqSection(),
                         static::build()->accordionSection(),
-                        static::build()->partners(),
+                        static::build()->partnersSection(),
                         static::build()->timeline(),
                         static::build()->teamSection(),
                         static::build()->heroLeftImage(),
