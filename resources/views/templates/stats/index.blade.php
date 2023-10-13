@@ -1,7 +1,7 @@
 <div class="bg-white">
     <div class="mx-auto w-4.5 max-w-7xl">
         <div class="relative ">
-            <img class="h-56 w-full bg-gray-50 object-cover "
+            <img class="h-56 bg-gray-50 object-cover "
                  src="{{ url(Storage::url($section->extra['bg_image'])) }}"
                  loading="lazy"
                  alt="{{ $section->extra['heading'] }}">
