@@ -1,10 +1,13 @@
-<div class="bg-primary-600 h-96 py-24 sm:py-32 filter blur relative" style="background-position: center center;
+<div class="relative">
+    <div class="bg-primary-600 h-96 py-24 sm:py-32 filter blur " style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image'] ) }});"
->
+    >
 
 
+
+    </div>
     <div class="mx-auto max-w-7xl px-6 lg:px-8 z-50 absolute left-[50%] fixed" style="transform: translate(-50%, -50%); top: 50%;">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center text-white">
@@ -37,32 +40,32 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
             </dl>
         </div>
     </div>
+
+    @push('scripts')
+
+
+        <script>
+            function animatedCounter(targer, time = 25000, start = 1) {
+                return {
+                    current: 0,
+                    target: targer,
+                    time: time,
+                    start: start,
+                    updatecounter: function() {
+                        start = this.start;
+                        const increment = (this.target - start) / this.time;
+                        const handle = setInterval(() => {
+                            if (this.current < this.target)
+                                this.current += increment
+                            else {
+                                clearInterval(handle);
+                                this.current = this.target
+                            }
+                        }, 1);
+                    }
+                };
+            }
+        </script>
+    @endpush
+
 </div>
-
-
-@push('scripts')
-
-
-    <script>
-        function animatedCounter(targer, time = 25000, start = 1) {
-            return {
-                current: 0,
-                target: targer,
-                time: time,
-                start: start,
-                updatecounter: function() {
-                    start = this.start;
-                    const increment = (this.target - start) / this.time;
-                    const handle = setInterval(() => {
-                        if (this.current < this.target)
-                            this.current += increment
-                        else {
-                            clearInterval(handle);
-                            this.current = this.target
-                        }
-                    }, 1);
-                }
-            };
-        }
-    </script>
-@endpush
