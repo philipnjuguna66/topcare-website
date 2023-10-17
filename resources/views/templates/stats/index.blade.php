@@ -1,4 +1,4 @@
-<div class="py-4 md:py-4 bg-primary-600">
+<div class="py-4 md:py-4">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-7xl sm:text-center">
 
@@ -16,7 +16,7 @@
                                     <!-- Item {{ $loop->index + 1 }} -->
                                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                         <img src="{{  \Illuminate\Support\Facades\Storage::url($slider)}}"
-                                             class="w-[800px] h-auto absolute block max-w-full py-20 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                                             class="w-[800px] h-auto " alt="">
                                     </div>
 
                                 @endforeach
