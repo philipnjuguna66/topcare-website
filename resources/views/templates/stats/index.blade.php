@@ -28,7 +28,7 @@
                 </div>
 
 
-                <div class="" style="background-size: cover;
+                <div class="bg-gray-950 bg-opacity-70" style="background-size: cover;
                     background-position: center center;
                      background-attachment: fixed;
                     background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image']) }})">
