@@ -9,7 +9,7 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
 
 
     </div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 z-2 absolute left-[40%] fixed" style="transform: translate(-50%, -50%); top: 50%;">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 z-2 absolute md:left-[50%] fixed" style="transform: translate(-50%, -50%); top: 50%;">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center text-white">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
