@@ -1,4 +1,4 @@
-<div class="bg-primary-900 py-24 sm:py-32">
+<div class="bg-white py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center">
@@ -7,14 +7,16 @@
             </div>
             <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
                 @foreach($section->extra['counts'] as $stat)
-                <div class="flex flex-col bg-gray-400/5 p-8 bg-white rounded-md shadow-sm">
-                   <div class="justify-center text-center">
-                       <x-dynamic-component :component=" $stat['icon'] " class="mt-4 h-12 w-12 text-center" />
-                   </div>
-                    <dt class="text-sm font-semibold leading-6 text-gray-600">{{  $stat['title'] }}</dt>
+                <div class="flex flex-col bg-gray-400/5 p-8 text-center mx-auto">
+                    <x-dynamic-component :component=" $stat['icon'] " class="mt-4 h-12 w-12 text-center" />
+                    <dt class="text-sm font-semibold leading-6 text-gray-600 text-center">{{  $stat['title'] }}</dt>
                     <div class="flex  flex-row text-center">
-                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50 text-center">
-                            {{ $stat['count'] }}
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50 text-center"
+                            x-data="animatedCounter( {{ $stat['count'] }}, 200, 0)"
+                            x-text="Math.round(current.toFixed(2))"
+                            x-intersect:enter="updatecounter"
+                            x-intersect:leave="current=0"
+                            x-transition>
                         </dd>
 
 
