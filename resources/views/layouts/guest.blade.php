@@ -22,11 +22,11 @@
         {!! app(\App\Settings\ScriptSettings::class)?->header !!}
 
     </head>
-    <body class="h-full bg-gray-50 text-gray-900 ">
+    <body class="h-full bg-gray-50 text-gray-900  font-poppins ">
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
 
     @include('layouts.partials.navigation',['options' => $options])
-        <div class="font-sans text-gray-900 ">
+        <div class="text-gray-900 ">
             {{ $slot }}
 
             @livewire('notifications')
