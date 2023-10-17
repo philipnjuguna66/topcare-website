@@ -5,7 +5,7 @@ namespace App\Utils\Enums;
 enum TeamTemplatesEnum : string
 {
 
-    case DIRECTOR = "direcor";
+    case DIRECTOR = "director";
     case STAFF = "staff";
 
     public function templatePath(): string
