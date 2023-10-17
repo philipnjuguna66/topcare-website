@@ -8,6 +8,7 @@ use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\CreateTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\EditTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListTeam;
 
+use Appsorigin\Teams\Filament\Resources\TeamResource\RelationManagers\RolesRelationManager;
 use Appsorigin\Teams\Models\CompanyTeam;
 use Appsorigin\Teams\Models\TeamCategory;
 use Filament\Forms\Components\DatePicker;
@@ -149,7 +150,7 @@ class TeamResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RolesRelationManager::class
         ];
     }
 
