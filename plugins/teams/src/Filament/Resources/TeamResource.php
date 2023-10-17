@@ -3,6 +3,7 @@
 namespace Appsorigin\Teams\Filament\Resources;
 
 
+use App\Utils\Enums\TeamTemplatesEnum;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\CreateTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\EditTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListTeam;
@@ -11,6 +12,7 @@ use Appsorigin\Teams\Models\CompanyTeam;
 use Appsorigin\Teams\Models\TeamCategory;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -64,11 +66,33 @@ class TeamResource extends Resource
                             ->getSearchResultsUsing(fn(string $search) => TeamCategory::query()->where('name', 'like', "%$search%")->pluck('name', 'id')->toArray())
                             ->createOptionModalHeading("create a team category")
                             ->createOptionForm([
-                                TextInput::make('name')
-                                    ->required()
-                                    ->unique('team_categories', 'name')
+                                Grid::make()
+                                ->schema([
+                                    TextInput::make('name')
+                                        ->required()
+                                        ->unique('team_categories', 'name'),
+                                    Select::make('template')
+                                    ->options(function () : array {
+
+                                        $options = [];
+
+                                        foreach (TeamTemplatesEnum::cases() as $case) {
+
+                                            $options[$case->value] = $case->value;
+                                        }
+                                        return  $options;
+
+                                    })
+                                    ->searchable()
+                                    ->preload()
+                                ])
                             ])
-                            ->createOptionUsing(fn(array $data) => TeamCategory::create(['name' => $data['name']]))
+                            ->createOptionUsing(fn(array $data) => TeamCategory::create([
+                                'name' => $data['name'],
+                                'extra' => [
+                                    'template' => $data['template']
+                                ]
+                            ]))
                     ]),
                 ])->columnSpan([
                     12,
