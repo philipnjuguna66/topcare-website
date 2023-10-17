@@ -8,22 +8,24 @@
 
                 <livewire:blog.blog-list :take="$section->extra['count']"/>
 
+            @if(isset($section->extra['project_link']) && ! is_null($section->extra['project_link']))
 
-
-        @if( ! is_null($section->extra['count'] ))
-            <div class=" ">
-                <div class="px-6 py-2 sm:px-6 sm:py-1 lg:px-8">
-                    <div class="md:mx-auto max-w-2xl text-center">
-                        <div class="mt-10 flex items-center justify-center gap-x-6">
-                            <a href="/news-and-blogs" class=" text-sm font-semibold leading-6 button">View more blog
-                                <span aria-hidden="true">→</span></a>
+                <div class=" ">
+                    <div class="px-6 py-2 sm:px-6 sm:py-1 lg:px-8">
+                        <div class="md:mx-auto max-w-2xl text-center">
+                            <div class="mt-10 flex items-center justify-center gap-x-6">
+                                <a
+                                    wire:navigate
+                                    href="{{ route('permalink.show', $section->extra['project_link']) }}"
+                                    class="button">
+                                    View more Projects <span aria-hidden="true">→</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            @endif
 
-        @endif
     </div>
     </div>
 </section>

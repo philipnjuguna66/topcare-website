@@ -43,7 +43,7 @@ trait ProjectFormSectionConcern
             TextInput::make('subheading'),
             Checkbox::make('bg_white')->label('White Background')->nullable(),
             TextInput::make('count')->numeric(),
-            Select::make('project_link')
+            Select::make('blog_link')
                 ->options(function (): array {
 
                     $options = [];
