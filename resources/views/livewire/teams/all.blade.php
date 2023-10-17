@@ -21,6 +21,8 @@
 
         @foreach($teams as $item)
 
+            @dump($item)
+
             @include('templates.teams.director',['team' => $item])
 
 
