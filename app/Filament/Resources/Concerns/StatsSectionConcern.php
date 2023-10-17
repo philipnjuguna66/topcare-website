@@ -7,6 +7,7 @@ use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
+use Guava\FilamentIconPicker\Forms\IconPicker;
 
 trait StatsSectionConcern
 {
@@ -22,6 +23,8 @@ trait StatsSectionConcern
             ->schema([
                 TextInput::make('title')->required(),
                 TextInput::make('count')->required()->numeric(),
+                IconPicker::make('icon')
+                    ->sets(['heroicons', 'fontawesome-solid']),
                 Checkbox::make('has_plus_icon')->helperText('+'),
             ])->collapsible()->defaultItems(4),
 

@@ -2,31 +2,8 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-7xl sm:text-center">
 
-            <div  {{ $animationEffect }}  class="grid grid-cols-1 md:grid-cols-2 gap-12 space-y-4 mt-4 py-4">
-
-                <div class="grid grid-cols-1 md:grid-cols-5 columns-12 gap-4 mt-12">
-                    <div class="col-span-3">
-
-                        <div id="custom-controls-gallery" class="relative w-full" data-carousel="slide">
-                            <!-- Carousel wrapper -->
-                            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
 
 
-                                @foreach($section->extra['images'] as $slider)
-                                    <!-- Item {{ $loop->index + 1 }} -->
-                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="{{  \Illuminate\Support\Facades\Storage::url($slider)}}"
-                                             class="h-auto "
-                                             alt="">
-                                    </div>
-
-                                @endforeach
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
 
                 <div class="bg-gray-950 bg-opacity-70" style="background-size: cover;
@@ -40,6 +17,7 @@
 
                             <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
                                 @foreach($section->extra['counts'] as $stat)
+                                    @dump($stat['icon'])
                                     <div class="flex flex-row  gap-y-3 border-l border-secondary-900 pl-6">
                                         <dt class="text-sm leading-6 text-gray-50 text-center">{{ $stat['title'] }}</dt>
                                         <div class="flex  flex-row text-center">
@@ -67,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
 
         </div>
     </div>
