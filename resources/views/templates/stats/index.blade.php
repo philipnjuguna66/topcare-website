@@ -11,7 +11,7 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
                 <p class="mt-4 text-lg leading-8 ">{{ $section->extra['subheading'] }}</p>
             </div>
-            <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4 z-50">
+            <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4 z-50 bg-opacity-100">
                 @foreach($section->extra['counts'] as $stat)
                 <div class="flex flex-col p-8 text-center bg-green-400 text-gray-100">
                     <x-dynamic-component :component=" $stat['icon'] " class="mt-4 mx-auto h-12 w-12 text-center" />
