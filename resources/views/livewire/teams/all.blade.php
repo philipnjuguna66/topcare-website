@@ -33,7 +33,7 @@
 
         @endforeach
     @else
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 justify-center" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 justify-center">
         @foreach($teams as $item)
 
 

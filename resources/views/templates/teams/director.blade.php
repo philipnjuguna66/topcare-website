@@ -1,4 +1,4 @@
-<div class="my-4" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+<div class="my-4">
     <div class="rounded-md shadow-lg  shadow-charcoal-500 bg-white flex flex-col md:flex-row">
         <div class="md:w-80 ">
             <img class="bg-primary-500" loading="lazy" alt="{{ $team->namr }}"
