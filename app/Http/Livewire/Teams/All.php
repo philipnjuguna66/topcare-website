@@ -63,7 +63,8 @@ class All extends Component
 
         return view('livewire.teams.all')->with([
             'teams' => $teams->simplePaginate($this->take ?? 6),
-            'tabs' => $tabs
+            'tabs' => $tabs,
+            'template' => TeamCategory::query()->where('id', $this->currentTeam)->pluck('extra.template')->first()
         ]);
     }
 }
