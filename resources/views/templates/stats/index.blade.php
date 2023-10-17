@@ -30,29 +30,4 @@
         </div>
     </div>
 </div>
-@push('scripts')
 
-
-    <script>
-        function animatedCounter(targer, time = 25000, start = 1) {
-            return {
-                current: 0,
-                target: targer,
-                time: time,
-                start: start,
-                updatecounter: function() {
-                    start = this.start;
-                    const increment = (this.target - start) / this.time;
-                    const handle = setInterval(() => {
-                        if (this.current < this.target)
-                            this.current += increment
-                        else {
-                            clearInterval(handle);
-                            this.current = this.target
-                        }
-                    }, 1);
-                }
-            };
-        }
-    </script>
-@endpush
