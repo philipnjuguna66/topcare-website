@@ -24,6 +24,7 @@
         <style>
             body{
                 font-family: Poppins;
+                font-style: normal;
             }
         </style>
 
