@@ -1,9 +1,9 @@
-<div class="bg-primary-600 py-24 sm:py-32 filter blur" style="background-position: center center;
+<div class="bg-primary-600 h-100 py-24 sm:py-32 filter blur" style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image'] ) }});">
-
-    <div class="mx-auto max-w-7xl px-6 lg:px-8  backdrop-blur-md">
+</div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 absolute top-[50%] ">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center text-white">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
@@ -35,7 +35,7 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
             </dl>
         </div>
     </div>
-</div>
+
 @push('scripts')
 
 
