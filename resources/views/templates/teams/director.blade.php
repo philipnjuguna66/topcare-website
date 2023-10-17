@@ -1,7 +1,7 @@
 <div class="my-4" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
     <div class="rounded-md shadow-lg  shadow-charcoal-500 bg-white flex flex-col md:flex-row">
         <div class="md:w-80 ">
-            <img class="bg-charcoal-500" loading="lazy" alt="{{ $team->namr }}"
+            <img class="bg-primary-500" loading="lazy" alt="{{ $team->namr }}"
                  src="{{ \Illuminate\Support\Facades\Storage::url($team->featured_image) }}">
         </div>
         <div class="md:w-4/5">
