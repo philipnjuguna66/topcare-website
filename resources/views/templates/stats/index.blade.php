@@ -3,7 +3,7 @@
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $section->extra['heading'] }}</h2>
-                <p class="mt-4 text-lg leading-8 text-gray-600">{{ $section->extra['heading'] }}</p>
+                <p class="mt-4 text-lg leading-8 text-gray-600">{{ $section->extra['subheading'] }}</p>
             </div>
             <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
                 @foreach($section->extra['counts'] as $stat)
