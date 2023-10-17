@@ -45,8 +45,6 @@ class All extends Component
 
         $tabs = TeamCategory::query()->get();
 
-
-
         $teams = CompanyTeam::query()
             ->with('link')
             ->whereHas('teamCategories', function ($query){
