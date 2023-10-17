@@ -9,9 +9,9 @@
                 @foreach($section->extra['counts'] as $stat)
                 <div class="flex flex-col p-8 text-center bg-green-400">
                     <x-dynamic-component :component=" $stat['icon'] " class="mt-4 mx-auto h-12 w-12 text-center" />
-                    <dt class="text-sm font-semibold leading-6 text-gray-600 text-center">{{  $stat['title'] }}</dt>
-                    <div class="flex  flex-row text-center">
-                        <dd class="order-first text-3xl font-semibold tracking-tight text-center"
+                    <dt class=" font-semibold leading-6 text-gray-600 text-center">{{  $stat['title'] }}</dt>
+                    <div class="flex  flex-row mx-auto">
+                        <dd class="order-first text-3xl font-semibold tracking-tight mx-auto"
                             x-data="animatedCounter( {{ $stat['count'] }}, 200, 0)"
                             x-text="Math.round(current.toFixed(2))"
                             x-intersect:enter="updatecounter"
@@ -21,7 +21,7 @@
 
 
                         @if($stat['has_plus_icon'])
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-center text-secondary-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto text-secondary-500">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>
                         @endif
