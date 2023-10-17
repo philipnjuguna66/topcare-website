@@ -25,6 +25,7 @@
             body{
                 font-family: Poppins;
                 font-style: normal;
+                font-size: 18px;
             }
         </style>
 
