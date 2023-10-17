@@ -4,7 +4,20 @@ background-repeat: no-repeat;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image'] ) }});
  filter: blur(8px);
   -webkit-filter: blur(8px);">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 z-50">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 z-50 absolute top-[50%] left-[50%]" style="  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center text-white">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
