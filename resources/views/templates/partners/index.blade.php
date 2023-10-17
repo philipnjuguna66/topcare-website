@@ -9,11 +9,13 @@
 
 
                 @foreach($section->extra['partners'] as $partner)
-                    <img
+
+                    @dump($partner)
+                    {{--<img
                         class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
                         src="{{ \Illuminate\Support\Facades\Storage::url($partner->logo) }}"
                         alt="{{ $partner->name }}"
-                        width="158" height="48">
+                        width="158" height="48">--}}
                 @endforeach
 
 
