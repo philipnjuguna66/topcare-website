@@ -16,7 +16,7 @@
                                     <!-- Item {{ $loop->index + 1 }} -->
                                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                         <img src="{{  \Illuminate\Support\Facades\Storage::url($slider)}}"
-                                             class="w-[800px] h-auto "
+                                             class="h-auto "
                                              alt="">
                                     </div>
 
