@@ -1,4 +1,4 @@
-<div class="bg-primary-600 py-24 sm:py-32" style="background-position: center center;
+<div class="bg-primary-600 py-24 sm:py-32 filter blur" style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image'] ) }});">
