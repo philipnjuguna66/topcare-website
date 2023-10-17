@@ -32,7 +32,7 @@
                                 </span>
                             </p>
 
-                            <p class="flex flex-col md:flex-row justify-between text-primary-600 font-semibold">
+                            <p class="flex flex-col md:flex-row justify-between text-primary-600 font-bold">
                                <span>Price: </span>
                                <span> {{ $project->price}}</span>
                             </p>
