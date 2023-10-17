@@ -11,7 +11,7 @@
                     <p class="font-bold text-sm">{{ $team->title }}</p>
                 </div>
                 <div>
-                    {{ str($team->body)->limit('250',' ...') }}
+                    {{ str($team->body)->limit('250',' ...')->toHtmlString() }}
                 </div>
             </div>
             <div class="px-4 py-2">
