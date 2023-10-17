@@ -1,7 +1,7 @@
 <div>
 
 
-    @dump(\App\Utils\Enums\TeamTemplatesEnum::tryFrom($template['template']))
+    @dump(\App\Utils\Enums\TeamTemplatesEnum::tryFrom($template['template'])->templatePath())
     <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
 
         @foreach($tabs as $tab)
@@ -15,11 +15,6 @@
         @endforeach
 
     </ul>
-    @dump($tab)
-
-
-
-
 
         @foreach($teams as $item)
 
