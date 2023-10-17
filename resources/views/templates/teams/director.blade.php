@@ -5,7 +5,7 @@
                  src="{{ \Illuminate\Support\Facades\Storage::url($team->featured_image) }}">
         </div>
         <div class="md:w-4/5">
-            <div class="px-4 py-2 flex justify-between rounded-b-md bg-white">
+            <div class="px-4 py-2 flex flex-col justify-between rounded-b-md bg-white">
                 <div>
                     <p class="font-bold text-xl md:text-3xl">{{ $team->name }}</p>
                     <p class="font-bold text-sm">{{ $team->title }}</p>
