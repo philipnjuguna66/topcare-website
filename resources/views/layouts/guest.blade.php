@@ -21,15 +21,6 @@
         @livewireStyles
         {!! app(\App\Settings\ScriptSettings::class)?->header !!}
 
-        <style>
-            html,body{
-                font-family: Poppins;
-                font-style: normal;
-                font-size: 18px;
-            }
-        </style>
-
-
     </head>
     <body class="h-full bg-gray-50 text-gray-900 ">
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
