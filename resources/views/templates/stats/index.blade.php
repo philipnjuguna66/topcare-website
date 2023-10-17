@@ -1,7 +1,6 @@
 <div class="bg-primary-600 h-96 py-24 sm:py-32 filter blur" style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
-height: 100%;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image'] ) }});">
 </div>
     <div class="mx-auto max-w-7xl px-6 lg:px-8 z-50 absolute left-[50%] " style="transform: translate(-50%, -50%); top: 50%;">
