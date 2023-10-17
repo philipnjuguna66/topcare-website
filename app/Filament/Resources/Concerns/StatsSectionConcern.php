@@ -17,7 +17,7 @@ trait StatsSectionConcern
             TextInput::make('heading')->required(),
             TextInput::make('subheading')->numeric(),
             FileUpload::make('images')->multiple()->preserveFilenames(),
-            FileUpload::make('bg_image')->label('Background Image')->required()->preserveFilenames(),
+            FileUpload::make('bg_image')->label('Background Image')->nullable()->preserveFilenames(),
             Repeater::make('counts')
             ->schema([
                 TextInput::make('title')->required(),
