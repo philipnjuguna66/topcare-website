@@ -108,8 +108,8 @@
 
             </div>
         </div>
-        <div class="mx-auto md:w-4/5 max-w-7xl md:py-16 px-8">
-            <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
+        <div class="mx-auto md:w-4/5 max-w-7xl px-8">
+            <h3 class="py-4 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
 
             <livewire:project.website.similar-project :project="$page"/>
         </div>
