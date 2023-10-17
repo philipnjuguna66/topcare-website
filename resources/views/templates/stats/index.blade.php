@@ -1,4 +1,4 @@
-<div class="bg-white py-24 sm:py-32">
+<div class="bg-primary-900 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center">
