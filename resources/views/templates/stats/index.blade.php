@@ -7,7 +7,7 @@
             </div>
             <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
                 @foreach($section->extra['counts'] as $stat)
-                <div class="flex flex-col bg-gray-400/5 p-8">
+                <div class="flex flex-col bg-gray-400/5 p-8 bg-white rounded-md shadow-sm">
                    <div class="justify-center text-center">
                        <x-dynamic-component :component=" $stat['icon'] " class="mt-4 h-12 w-12 text-center" />
                    </div>
@@ -30,4 +30,29 @@
         </div>
     </div>
 </div>
+@push('scripts')
 
+
+    <script>
+        function animatedCounter(targer, time = 25000, start = 1) {
+            return {
+                current: 0,
+                target: targer,
+                time: time,
+                start: start,
+                updatecounter: function() {
+                    start = this.start;
+                    const increment = (this.target - start) / this.time;
+                    const handle = setInterval(() => {
+                        if (this.current < this.target)
+                            this.current += increment
+                        else {
+                            clearInterval(handle);
+                            this.current = this.target
+                        }
+                    }, 1);
+                }
+            };
+        }
+    </script>
+@endpush
