@@ -15,6 +15,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
 
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
+        {!! app(\App\Settings\ScriptSettings::class)?->header !!}
+
         <style>
             body{
                 font-family: Poppins;
@@ -22,16 +28,12 @@
         </style>
 
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @livewireStyles
-        {!! app(\App\Settings\ScriptSettings::class)?->header !!}
     </head>
     <body class="h-full bg-gray-50 text-gray-900 ">
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
 
     @include('layouts.partials.navigation',['options' => $options])
-        <div class="font-poppins text-gray-900 ">
+        <div class="font-sans text-gray-900 ">
             {{ $slot }}
 
             @livewire('notifications')
