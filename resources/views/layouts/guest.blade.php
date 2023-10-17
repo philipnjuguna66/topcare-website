@@ -22,7 +22,7 @@
         {!! app(\App\Settings\ScriptSettings::class)?->header !!}
 
         <style>
-            body{
+            html,body{
                 font-family: Poppins;
                 font-style: normal;
                 font-size: 18px;
