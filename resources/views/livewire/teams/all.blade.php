@@ -1,7 +1,14 @@
+<?php
+    use  App\Utils\Enums\TeamTemplatesEnum;
+
+    $templatePath = TeamTemplatesEnum::tryFrom($template['template'])->templatePath();
+?>
+
+
 <div>
 
 
-    @dump(\App\Utils\Enums\TeamTemplatesEnum::tryFrom($template['template'])->templatePath())
+
     <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
 
         @foreach($tabs as $tab)
@@ -16,14 +23,30 @@
 
     </ul>
 
+    @if(TeamTemplatesEnum::tryFrom($template['template']) == TeamTemplatesEnum::DIRECTOR)
         @foreach($teams as $item)
 
 
 
-            @include('templates.teams.director',['team' => $item])
+            @include($templatePath,['team' => $item])
 
 
         @endforeach
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 justify-center" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        @foreach($teams as $item)
+
+
+
+            @include($templatePath,['team' => $item])
+
+
+        @endforeach
+        </div>
+    @endif
+
+
+
 
     <div class="mx-auto max-w-4xl text-center mt-2 flex justify-end">
         {{ $teams->links() }}
