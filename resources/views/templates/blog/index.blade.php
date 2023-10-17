@@ -8,7 +8,7 @@
 
                 <livewire:blog.blog-list :take="$section->extra['count']"/>
 
-            @if(isset($section->extra['project_link']) && ! is_null($section->extra['project_link']))
+            @if(isset($section->extra['blog_link']) && ! is_null($section->extra['blog_link']))
 
                 <div class=" ">
                     <div class="px-6 py-2 sm:px-6 sm:py-1 lg:px-8">
@@ -16,9 +16,9 @@
                             <div class="mt-10 flex items-center justify-center gap-x-6">
                                 <a
                                     wire:navigate
-                                    href="{{ route('permalink.show', $section->extra['project_link']) }}"
+                                    href="{{ route('permalink.show', $section->extra['blog_link']) }}"
                                     class="button">
-                                    View more Projects <span aria-hidden="true">→</span></a>
+                                    View more Blogs <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
                     </div>
