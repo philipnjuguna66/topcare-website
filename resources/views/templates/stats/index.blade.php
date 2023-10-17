@@ -16,7 +16,7 @@
 
                             <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
                                 @foreach($section->extra['counts'] as $stat)
-                                    <div class="flex  gap-y-3 border-l border-secondary-900 pl-6">
+                                    <div class="flex flex-row  gap-y-3 border-l border-secondary-900 pl-6">
                                         <dt class="text-sm leading-6 text-gray-50 text-center">{{ $stat['title'] }}</dt>
                                         <div class="flex  flex-row text-center">
                                             <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50 text-center"
