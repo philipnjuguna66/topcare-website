@@ -1,7 +1,8 @@
-<div class="relative py-32 ">
-    <div class="bg-primary-600 h-96 py-32 sm:py-32 my-auto filter blur " style="background-position: center center;
+<div class="relative ">
+    <div class="bg-primary-600 py-32 sm:py-32 my-auto filter blur " style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
+height: 100%;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image'] ) }});"
     >
 
