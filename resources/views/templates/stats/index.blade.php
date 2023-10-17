@@ -41,22 +41,6 @@
                         </div>
 
                     </div>
-                    <div class="col-span-2 prose-2xl mt-12"
-                    >
-                        {!! $section->extra['content'] !!}
-
-                        <div class="my-4 flex flex-col md:flex-row justify-between">
-
-                            @if(isset($section->extra['cta_url'] ) && $section->extra['cta_url'] && $section->extra['cta_name']  )
-                                <a href="{{ $section->extra['cta_url'] }}"
-                                   class="line-clamp-3  leading-6 text-gray-50 button font-semibold rounded-tr-2xl rounded-bl-2xl px-4 py-0.5"
-                                >
-                                    {{ $section->extra['cta_name'] }}
-                                </a>
-                            @endif
-                        </div>
-
-                    </div>
                 </div>
 
 
