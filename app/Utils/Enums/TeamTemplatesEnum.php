@@ -11,8 +11,8 @@ enum TeamTemplatesEnum : string
     public function templatePath(): string
     {
         return match ($this) {
-            static::DIRECTOR => "template.team.director",
-            static::STAFF => "template.team.staff",
+            static::DIRECTOR => "templates.teams.director",
+            static::STAFF => "templates.teams.staff",
         };
     }
 
