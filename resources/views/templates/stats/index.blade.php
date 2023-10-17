@@ -1,4 +1,4 @@
-<div class="relative ">
+<div class="relative " {{ $animationEffect }}>
     <div class="bg-primary-600 h-[500px] py-32 sm:py-32 my-auto filter blur-sm " style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
