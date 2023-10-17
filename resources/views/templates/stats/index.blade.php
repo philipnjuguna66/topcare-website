@@ -41,9 +41,8 @@
                         </div>
 
                     </div>
-                    <div class="col-span-2 prose-2xl mt-12" style="background-size: cover;
-                    background-position: center center; background-attachment: fixed;
-                    background-image: url("{{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image']) }}")">
+                    <div class="col-span-2 prose-2xl mt-12"
+                    >
                         {!! $section->extra['content'] !!}
 
                         <div class="my-4 flex flex-col md:flex-row justify-between">
@@ -61,7 +60,10 @@
                 </div>
 
 
-                <div class="">
+                <div class="" style="background-size: cover;
+                    background-position: center center;
+                     background-attachment: fixed;
+                    background-image: url("{{ \Illuminate\Support\Facades\Storage::url($section->extra['bg_image']) }}")">
                     <div class="">
                         <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
                             <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">{{ $section->extra['heading'] }}</h2>
