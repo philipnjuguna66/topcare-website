@@ -25,18 +25,17 @@
                                                 x-intersect:enter="updatecounter"
                                                 x-intersect:leave="current=0"
                                                 x-transition>
-
                                             </dd>
+
 
                                             @if($stat['has_plus_icon'])
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-center text-secondary-500">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
-
                                             @endif
                                         </div>
-
                                     </div>
+
                                 @endforeach
 
                             </dl>
