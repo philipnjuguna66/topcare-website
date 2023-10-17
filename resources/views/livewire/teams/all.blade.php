@@ -20,6 +20,9 @@
     <ul role="list" class="mx-auto mt-20 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
         @foreach($teams as $item)
+
+            @include('templates.teams.director',['team' => $item])
+
             <li
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
