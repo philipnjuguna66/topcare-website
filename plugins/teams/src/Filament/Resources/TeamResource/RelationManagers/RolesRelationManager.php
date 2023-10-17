@@ -116,6 +116,7 @@ class RolesRelationManager extends RelationManager
                             'template' => $data['template']
                         ]
                     ])),
+                Tables\Actions\DeleteAction::make(),
                 Tables\Actions\DetachAction::make(),
 
             ])
