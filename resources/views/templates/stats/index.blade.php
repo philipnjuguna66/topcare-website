@@ -8,7 +8,7 @@
             <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
                 @foreach($section->extra['counts'] as $stat)
                 <div class="flex flex-col bg-gray-400/5 p-8">
-                    <x-dynamic-component :component="{{ $stat['icon'] }}" class="mt-4" />
+                    <x-dynamic-component :component=" $stat['icon'] " class="mt-4" />
                     <dt class="text-sm font-semibold leading-6 text-gray-600">{{  $stat['title'] }}</dt>
                     <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50 text-center"
                         x-data="animatedCounter( {{ $stat['count'] }}, 200, 0)"
