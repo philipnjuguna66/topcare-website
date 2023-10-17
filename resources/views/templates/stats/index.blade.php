@@ -1,4 +1,4 @@
-<div class="bg-primary-600/50 py-24 sm:py-32">
+<div class="bg-primary-600 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-none">
             <div class="text-center">
@@ -7,7 +7,7 @@
             </div>
             <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
                 @foreach($section->extra['counts'] as $stat)
-                <div class="flex flex-col bg-gray-400/5 p-8 text-center">
+                <div class="flex flex-col p-8 text-center bg-primary-600/60">
                     <x-dynamic-component :component=" $stat['icon'] " class="mt-4 h-12 w-12 text-center" />
                     <dt class="text-sm font-semibold leading-6 text-gray-600 text-center">{{  $stat['title'] }}</dt>
                     <div class="flex  flex-row text-center">
