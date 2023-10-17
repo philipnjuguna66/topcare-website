@@ -17,9 +17,9 @@ trait StatsSectionConcern
             TextInput::make('heading')->required(),
             TextInput::make('subheading')->numeric(),
             FileUpload::make('images')->multiple()->preserveFilenames(),
+            FileUpload::make('bg_image')->label('Background Image')->required()->preserveFilenames(),
             Repeater::make('counts')
             ->schema([
-                FileUpload::make('bg_image')->label('Background Image')->required()->preserveFilenames(),
                 TextInput::make('title')->required(),
                 TextInput::make('count')->required()->numeric(),
                 Checkbox::make('has_plus_icon')->helperText('+'),
