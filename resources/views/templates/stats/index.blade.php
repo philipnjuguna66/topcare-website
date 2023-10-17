@@ -12,11 +12,8 @@
                     <dt class="text-sm font-semibold leading-6 text-gray-600">{{  $stat['title'] }}</dt>
                     <div class="flex  flex-row text-center">
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-50 text-center"
-                            x-data="animatedCounter( {{ $stat['count'] }}, 200, 0)"
-                            x-text="Math.round(current.toFixed(2))"
-                            x-intersect:enter="updatecounter"
-                            x-intersect:leave="current=0"
-                            x-transition>
+                          >
+                            {{ $stat['count'] }}
                         </dd>
 
 
