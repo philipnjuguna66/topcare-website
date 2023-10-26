@@ -32,9 +32,12 @@
                     </div>
                 @else
 
+                    @dump($section->extra)
+
                     @if(isset($section->extra['video_path']) && filled($section->extra['video_path']) )
                         @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $section->extra['video_path'], 'autoplay' => true ])
                     @else
+
                         <img
                             loading="lazy"
                             src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}"
