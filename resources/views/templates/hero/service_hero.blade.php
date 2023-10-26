@@ -1,4 +1,4 @@
-<div class="md:py-24 py-8 bg-gray-50">
+<div class="md:py-12 py-8 bg-gray-50">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-7xl sm:text-center">
 
