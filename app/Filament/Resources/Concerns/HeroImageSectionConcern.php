@@ -50,7 +50,9 @@ trait HeroImageSectionConcern
                 FileUpload::make('image')
                     ->preserveFilenames()
                     ->hidden(fn(\Closure $get) =>  $get("has_contact_form"))
-                    ->required(fn(\Closure $get) => ! $get("has_contact_form")),
+                    ->required(fn(\Closure $get) :bool => ! $get("has_contact_form")  && blank($get("image"))),
+
+                TextInput::make('video_path')->reactive()->required(fn($get) : bool => blank($get("image"))),
                 Repeater::make('sections')
                     ->schema([
                         RichEditor::make('content')
