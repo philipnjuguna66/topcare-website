@@ -1,4 +1,4 @@
-<div class="  @if($section->extra['bg_white']  ) bg-white @endif py-16">
+<div class="  @if($section->extra['bg_white']  ) bg-white @endif lg:py-12 mt-4 lg:mt-6 py-4">
     <div class="md:mx-auto max-w-7xl px-2 lg:px-2">
         <div class="md:mx-auto max-w-5xl text-center">
             <h1 class="text-2xl  md:text-5xl font-bold tracking-tight"> {{ str($section->extra['heading'])->toHtmlString() }}</h1>
