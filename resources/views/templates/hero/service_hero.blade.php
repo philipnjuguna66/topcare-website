@@ -14,14 +14,13 @@
 
 
                 @foreach($section->extra['sections'] as $index => $content)
-                    <div class="prose shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
+                    <div
+                        class="prose shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
 
                         {{ str($content['content'])->toHtmlString() }}
 
                     </div>
                 @endforeach
-
-
 
 
             </div>
@@ -33,10 +32,15 @@
                     </div>
                 @else
 
-                    <img
-                        loading="lazy"
-                        src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}" class="object-cover py-20">
+                    @if(isset($section->extra['video_path']) && filled($section->extra['video_path']) )
+                        @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $section->extra['video_path'], 'autoplay' => true ])
+                    @else
+                        <img
+                            loading="lazy"
+                            src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}"
+                            class="object-cover py-20">
 
+                    @endif
                 @endif
 
             </div>
