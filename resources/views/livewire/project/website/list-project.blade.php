@@ -20,17 +20,12 @@
                         </h3>
                         <div>
                             <p class="flex justify-between gap-4">
-                                <span class="font-bold text-secondary-500">Neighborhood: </span>
+                                <span class="font-bold text-secondary-500">Location: </span>
                                 <span class="font-normal  text-gray-500">
                                 {{ $project->purpose }}
                                 </span>
                             </p>
-                            <p class="flex justify-between gap-4">
-                                <span class="font-bold text-secondary-500">Features: </span>
-                                <span class="font-normal  text-gray-500">
-                                    {{ $project->location }}
-                                </span>
-                            </p>
+
 
                             <p class="flex flex-col md:flex-row justify-between text-primary-600 font-bold">
                                <span>Price: </span>

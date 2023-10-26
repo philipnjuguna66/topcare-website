@@ -43,8 +43,9 @@ class ProjectResource extends Resource
                         ->schema([
                             Grid::make()->schema([
                                 TextInput::make('cta')
-                                    ->label('cta')
-                                    ->required()
+                                    ->label(
+                                        'cta')
+                                    ->hidden()
                                     ->reactive()->helperText("Send the word katani to 12334"),
 
                                 TextInput::make('name')
