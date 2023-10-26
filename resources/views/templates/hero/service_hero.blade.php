@@ -38,7 +38,8 @@
                         <img
                             loading="lazy"
                             src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}"
-                            class="object-cover py-20">
+                            class="object-cover py-20"
+                        >
 
                     @endif
                 @endif
