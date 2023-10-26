@@ -28,7 +28,8 @@ trait HeroImageSectionConcern
                 ->searchable()
                 ->required(),
             RichEditor::make('description')->required(),
-            FileUpload::make('image')->preserveFilenames()->required(),
+            FileUpload::make('image')->preserveFilenames()->required(fn($get) : bool => blank($get("video_path"))),
+            TextInput::make('video_path')->required(fn($get) : bool => blank($get("image"))),
             Checkbox::make('bg_white')->label('White Background')->required(),
             Grid::make(2)->schema([
                 TextInput::make('cta_url')->label('cta url'),
