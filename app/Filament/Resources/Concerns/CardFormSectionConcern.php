@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources\Concerns;
 
+use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 
@@ -21,6 +23,7 @@ trait CardFormSectionConcern
             TextInput::make('view_more_link')->url()->nullable(),
             TextInput::make('view_more_link_label')->nullable(),
             Checkbox::make('bg_white')->label('White Background')->nullable(),
+
             Repeater::make('cards')
             ->schema([
                 TextInput::make('title')->nullable(),
