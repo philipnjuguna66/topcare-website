@@ -1,5 +1,5 @@
 <div class="bg-gray-50 @if($section->extra['bg_white'] )  bg-white @endif">
-    <div class="mx-auto max-w-7xl px-2 lg:px-8 md:mt-5 md:pt-8" {{ $animationEffect }}>
+    <div class="mx-auto max-w-7xl px-2 lg:px-8 md:mt-5 md:pt-2" {{ $animationEffect }}>
         <div class="  grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-3 space-y-4 mt-4 py-4">
             @foreach($section->extra['columns_sections'] as $index => $columns)
                <div class="text-justify max-w-7xl">
