@@ -56,33 +56,37 @@ trait HeroImageSectionConcern
 
                     for ($i= 1; $i <= $get('columns'); $i++){
                        $sections[] =
-                                Builder::make('columns_sections.'.$i)->label('Page Sections')
-                                    ->blocks([
-                                        Block::make('header')
-                                            ->schema([
-                                                TextInput::make('heading')->label("Heading")->reactive(),
-                                                Textarea::make('subheading')->label("Sub Heading")->reactive(),
-                                            ])
-                                        ->columns(2),
-                                        Block::make('image')
-                                            ->schema([
-                                                FileUpload::make('image')->preserveFilenames(),
-                                            ]),
-                                        Block::make('video')
-                                            ->schema([
-                                                TextInput::make('video_path'),
-                                            ]),
-                                        Block::make('booking_form')
-                                            ->schema([
-                                                Checkbox::make('has_contact_form'),
-                                            ]),
-                                        Block::make('text_area')
-                                            ->schema([
-                                                RichEditor::make('body'),
-                                            ]),
-                                    ])
-                                    ->disableItemDeletion(false)
-                                    ->collapsible();
+                                Section::make("Column {$i}")
+                           ->description("add details to this section")
+                           ->schema([
+                               Builder::make('columns_sections.'.$i)->label('Page Sections')
+                                   ->blocks([
+                                       Block::make('header')
+                                           ->schema([
+                                               TextInput::make('heading')->label("Heading")->reactive(),
+                                               Textarea::make('subheading')->label("Sub Heading")->reactive(),
+                                           ])
+                                           ->columns(2),
+                                       Block::make('image')
+                                           ->schema([
+                                               FileUpload::make('image')->preserveFilenames(),
+                                           ]),
+                                       Block::make('video')
+                                           ->schema([
+                                               TextInput::make('video_path'),
+                                           ]),
+                                       Block::make('booking_form')
+                                           ->schema([
+                                               Checkbox::make('has_contact_form'),
+                                           ]),
+                                       Block::make('text_area')
+                                           ->schema([
+                                               RichEditor::make('body'),
+                                           ]),
+                                   ])
+                                   ->disableItemDeletion(false)
+                                   ->collapsible(),
+                           ]);
                     }
 
                     return  $sections;
