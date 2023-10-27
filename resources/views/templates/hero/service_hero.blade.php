@@ -17,9 +17,7 @@
                              "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
                              "default" => null,
                            };
-
                            ?>
-
                        {{ str($html)->toHtmlString() }}
                    @endforeach
                </div>
