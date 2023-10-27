@@ -86,9 +86,10 @@ class EditPage extends EditRecord
 
             $page->sections()->delete();
 
+
             foreach ($data['sections'] as $section) {
 
-                $page->sections()->create([
+              $page->sections()->create([
                     'type' => $section['type'],
                     'extra' => $section['data'],
                 ]);

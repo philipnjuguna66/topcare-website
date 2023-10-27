@@ -1,13 +1,41 @@
-<div class="md:py-12 py-8 bg-gray-50">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-7xl sm:text-center">
+<div class="md:pt-24 py-8 bg-gray-100 @if($section->extra['bg_white'] )  bg-white @endif">
+    <div class="mx-auto w-4/5 max-w-7xl px-2 lg:px-8">
 
-            <h1 class="text-2xl md:text-5xl font-bold tracking-tight"> {{ $section->extra['heading'] }}</h1>
+        <div class="grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-12 space-y-4 mt-4 py-4">
 
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 space-y-4 mt-4 py-4">
 
-            <div>
+
+
+
+            @foreach($section->extra['columns_sections'] as $index => $columns)
+
+               <div class="text-justify">
+
+
+                   @foreach($columns as $column)
+
+
+
+                       <?php
+                           $html = match ($column['type'])
+                           {
+                             "header" => view('templates.hero._header', ['heading' => $column['data']['heading'], "subheading" => $column['data']['subheading']])->render(),
+                             "video" => view('templates.embeded._video_iframe', ["autoplay" => true, 'videoUri' => $column['data']['video_path']])->render(),
+                             "image" => view('templates.hero._image', ['image' => $column['data']['image'],'section' => $section])->render(),
+                             "booking_form" => view('templates.hero._site')->render(),
+                             "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
+                             "default" => null,
+                           };
+
+                           ?>
+
+                       {{ str($html)->toHtmlString() }}
+                   @endforeach
+               </div>
+
+            @endforeach
+
+           {{-- <div>
                 <div class="py-2 dark:text-white">
                     {{ $section->extra['subheading'] }}
                 </div>
@@ -46,7 +74,7 @@
                 @endif
 
             </div>
-
+--}}
 
         </div>
     </div>

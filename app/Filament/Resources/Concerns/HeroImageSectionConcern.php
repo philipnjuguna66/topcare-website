@@ -47,19 +47,23 @@ trait HeroImageSectionConcern
             return $get('heading') ?? "Hero with Sections";
         })
             ->schema([
-                TextInput::make('columns')->numeric()->default(3)->maxValue(4)->reactive(),
+                TextInput::make('columns')->numeric()->default(2)->maxValue(4)->reactive(),
+                Checkbox::make('bg_white'),
 
-                Grid::make()->schema([
-                    Section::make("Column ")
-                            ->description("add section connected")
-                            ->schema([
-                                Builder::make('sections')->label('Page Sections')
+                Grid::make(1)->schema(function ($get) : array{
+
+                    $sections = [];
+
+                    for ($i= 1; $i <= $get('columns'); $i++){
+                       $sections[] =
+                                Builder::make('columns_sections.'.$i)->label('Page Sections')
                                     ->blocks([
                                         Block::make('header')
                                             ->schema([
-                                                TextInput::make('heading')->reactive(),
-                                                Textarea::make('subheading')->reactive(),
-                                            ]),
+                                                TextInput::make('heading')->label("Heading")->reactive(),
+                                                Textarea::make('subheading')->label("Sub Heading")->reactive(),
+                                            ])
+                                        ->columns(2),
                                         Block::make('image')
                                             ->schema([
                                                 FileUpload::make('image')->preserveFilenames(),
@@ -72,9 +76,17 @@ trait HeroImageSectionConcern
                                             ->schema([
                                                 Checkbox::make('has_contact_form'),
                                             ]),
+                                        Block::make('text_area')
+                                            ->schema([
+                                                RichEditor::make('body'),
+                                            ]),
                                     ])
-                            ]),
-                    ]),
+                                    ->disableItemDeletion(false)
+                                    ->collapsible();
+                    }
+
+                    return  $sections;
+                }),
 
 
             ]);
