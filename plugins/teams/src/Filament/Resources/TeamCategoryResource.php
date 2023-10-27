@@ -112,7 +112,7 @@ class TeamCategoryResource extends Resource
                 Action::make('edit')
                     ->slideOver()
                     ->closeModalByClickingAway(false)
-                    ->mountUsing(fn(CompanyTeam $record, ComponentContainer $form) => $form->fill([
+                    ->mountUsing(fn(TeamCategory $record, ComponentContainer $form) => $form->fill([
 
                         'created_at' => $record->created_At,
                         'name' => $record->name,
