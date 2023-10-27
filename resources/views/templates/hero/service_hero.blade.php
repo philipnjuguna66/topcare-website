@@ -26,47 +26,6 @@
 
             @endforeach
 
-           {{-- <div>
-                <div class="py-2 dark:text-white">
-                    {{ $section->extra['subheading'] }}
-                </div>
-
-
-                @foreach($section->extra['sections'] as $index => $content)
-                    <div
-                        class="prose shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
-
-                        {{ str($content['content'])->toHtmlString() }}
-
-                    </div>
-                @endforeach
-
-
-            </div>
-
-            <div class="filter bg-blend-multiply  mt-3 ">
-                @if(isset($section->extra['has_contact_form']) && $section->extra['has_contact_form'])
-                    <div class="">
-                        <livewire:contact.book-site-visit/>
-                    </div>
-                @else
-
-                    @if(isset($section->extra['video_path']) && filled($section->extra['video_path']) )
-                        @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $section->extra['video_path'], 'autoplay' => true ])
-                    @else
-
-                        <img
-                            loading="lazy"
-                            src="{{ \Illuminate\Support\Facades\Storage::url($section->extra['image']) }}"
-                            class="object-cover py-20"
-                        >
-
-                    @endif
-                @endif
-
-            </div>
---}}
-
         </div>
     </div>
 </div>
