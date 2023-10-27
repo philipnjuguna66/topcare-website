@@ -1,6 +1,6 @@
 <div class="font-extrabold bg-white shadow-2xl rounded-xl px-2 mt-5 bg-gray-100 border-b-4 border-primary-600 border-b-primary-600">
 
-    <h3 class="py-2 font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2 text-secondary-500"> Book A Free Site Visit </h3>
+    <h3 class="py-8 font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2 text-secondary-500"> Book A Free Site Visit </h3>
 
 
     <form
@@ -10,7 +10,7 @@
     >
         {{ $this->form }}
 
-        <div class="flex items-center justify-end">
+        <div class="flex items-center justify-end px-4 ">
 
 
             <x-button class="ml-4 my-4" >
