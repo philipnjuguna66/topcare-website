@@ -4,10 +4,11 @@ namespace Appsorigin\Teams\Filament\Resources;
 
 
 use App\Utils\Enums\TeamTemplatesEnum;
-use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\CreateCategoryTeam;
-use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\EditCategoryTeam;
-use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListCategoryTeam;
 
+
+use Appsorigin\Teams\Filament\Resources\TeamCategoryResource\Pages\CreateCategoryTeam;
+use Appsorigin\Teams\Filament\Resources\TeamCategoryResource\Pages\EditCategoryTeam;
+use Appsorigin\Teams\Filament\Resources\TeamCategoryResource\Pages\ListCategoryTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\RelationManagers\RolesRelationManager;
 use Appsorigin\Teams\Models\CompanyTeam;
 use Appsorigin\Teams\Models\TeamCategory;
