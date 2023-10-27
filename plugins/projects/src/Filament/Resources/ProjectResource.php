@@ -45,7 +45,7 @@ class ProjectResource extends Resource
                                 TextInput::make('cta')
                                     ->label(
                                         'cta')
-                                    ->hidden()
+                                    ->nullable()
                                     ->reactive()->helperText("Send the word katani to 12334"),
 
                                 TextInput::make('name')
