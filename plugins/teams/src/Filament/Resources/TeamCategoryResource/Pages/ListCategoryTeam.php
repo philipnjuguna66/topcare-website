@@ -1,6 +1,6 @@
 <?php
 
-namespace Appsorigin\Teams\Filament\Resources\TeamResource\Pages;
+namespace Appsorigin\Teams\Filament\Resources\TeamCategoryResource\Pages;
 
 use Appsorigin\Blog\Filament\Resources\BlogResource;
 use Appsorigin\Teams\Filament\Resources\TeamResource;
