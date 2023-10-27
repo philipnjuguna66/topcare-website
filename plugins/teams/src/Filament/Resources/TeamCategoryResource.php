@@ -131,7 +131,7 @@ class TeamCategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RolesRelationManager::class
+
         ];
     }
 
