@@ -3,7 +3,6 @@
 
         <div class="grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-12 space-y-4 mt-4 py-4">
 
-
             @foreach($section->extra['columns_sections'] as $index => $columns)
 
                <div class="text-justify">
