@@ -22,6 +22,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Form;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
@@ -80,7 +81,7 @@ class TeamCategoryResource extends Resource
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make()
+                CreateAction::make()
                     ->form([
                         TextInput::make('name')
                             ->required()
