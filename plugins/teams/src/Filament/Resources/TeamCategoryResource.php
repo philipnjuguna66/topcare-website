@@ -41,6 +41,8 @@ class TeamCategoryResource extends Resource
     protected static ?string $navigationLabel = "Teams Category";
     protected static ?string $navigationGroup = "Teams";
 
+    protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
         return $form
