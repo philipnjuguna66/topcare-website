@@ -3,6 +3,7 @@
 namespace Appsorigin\Teams\Filament\Resources\TeamCategoryResource\Pages;
 
 use App\Events\BlogCreatedEvent;
+use Appsorigin\Teams\Filament\Resources\TeamCategoryResource;
 use Appsorigin\Teams\Filament\Resources\TeamResource;
 use Appsorigin\Teams\Models\CompanyTeam;
 use Carbon\Carbon;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class EditCategoryTeam extends EditRecord
 {
-    protected static string $resource = TeamResource::class;
+    protected static string $resource = TeamCategoryResource::class;
 
     protected function getActions(): array
     {
