@@ -81,7 +81,7 @@ class TeamCategoryResource extends Resource
                 //
             ])
             ->headerActions([
-                CreateAction::make()
+                Action::make("Create a team")
                     ->form([
                         TextInput::make('name')
                             ->required()
