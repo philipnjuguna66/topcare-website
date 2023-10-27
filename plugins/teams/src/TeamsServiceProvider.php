@@ -2,6 +2,7 @@
 
 namespace Appsorigin\Teams;
 
+use Appsorigin\Teams\Filament\Resources\TeamCategoryResource;
 use Appsorigin\Teams\Filament\Resources\TeamResource;
 use Filament\PluginServiceProvider;
 
@@ -20,6 +21,7 @@ class TeamsServiceProvider extends PluginServiceProvider
     protected array $resources = [
 
         TeamResource::class,
+        TeamCategoryResource::class,
     ];
 
     protected array $pages  = [];
