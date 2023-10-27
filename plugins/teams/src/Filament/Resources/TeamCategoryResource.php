@@ -26,6 +26,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ReplicateAction;
@@ -78,8 +79,36 @@ class TeamCategoryResource extends Resource
             ->filters([
                 //
             ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make()
+                    ->form([
+                        TextInput::make('name')
+                            ->required()
+                            ->unique('team_categories', 'name'),
+                        Select::make('template')
+                            ->options(function () : array {
+
+                                $options = [];
+
+                                foreach (TeamTemplatesEnum::cases() as $case) {
+
+                                    $options[$case->value] = $case->value;
+                                }
+                                return  $options;
+
+                            })
+                            ->searchable()
+                            ->preload()
+                    ])
+                    ->action(fn(array $data) => TeamCategory::create([
+                        'name' => $data['name'],
+                        'extra' => [
+                            'template' => $data['template']
+                        ]
+                    ])),
+            ])
             ->actions([
-                EditAction::make()
+                Action::make('edit')
                     ->slideOver()
                     ->closeModalByClickingAway(false)
                     ->mountUsing(fn(CompanyTeam $record, ComponentContainer $form) => $form->fill([
@@ -123,7 +152,7 @@ class TeamCategoryResource extends Resource
 
 
                     }),
-                ReplicateAction::make()->excludeAttributes(['id'])
+                ReplicateAction::make()->icon(null)->excludeAttributes(['id'])
             ])
             ->bulkActions([
                 DeleteBulkAction::make(),
