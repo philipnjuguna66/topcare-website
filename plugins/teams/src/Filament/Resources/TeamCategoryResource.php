@@ -11,6 +11,8 @@ use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListCategoryTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\RelationManagers\RolesRelationManager;
 use Appsorigin\Teams\Models\CompanyTeam;
 use Appsorigin\Teams\Models\TeamCategory;
+use Carbon\Carbon;
+use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
@@ -74,7 +76,15 @@ class TeamCategoryResource extends Resource
                 //
             ])
             ->actions([
-                EditAction::make()->form([
+                EditAction::make()
+                    ->mountUsing(fn(CompanyTeam $record, ComponentContainer $form) => $form->fill([
+
+                        'created_at' => $record->created_At,
+                        'name' => $record->name,
+                        'template' => $record->extra['template'],
+
+                    ]))->form([
+                    DatePicker::make('created_at'),
                     TextInput::make('name')
                         ->required()
                         ->unique('team_categories', 'name'),
@@ -93,12 +103,21 @@ class TeamCategoryResource extends Resource
                         ->searchable()
                         ->preload()
                 ])
-                    ->action(fn(array $data) => TeamCategory::create([
-                        'name' => $data['name'],
-                        'extra' => [
-                            'template' => $data['template']
-                        ]
-                    ])),
+                    ->action(function (array $data , TeamCategory $record) {
+
+                        $record->setCreatedAt(Carbon::parse($data['created_at']));
+
+                        $record->saveQuietly();
+
+                        $record->updateQuietly([
+                            'name' => $data['name'],
+                            'extra' => [
+                                'template' => $data['template']
+                            ]
+                        ]);
+
+
+                    }),
                 ReplicateAction::make()->excludeAttributes(['id'])
             ])
             ->bulkActions([
