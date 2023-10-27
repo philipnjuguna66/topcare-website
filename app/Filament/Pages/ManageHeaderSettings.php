@@ -14,6 +14,7 @@ class ManageHeaderSettings extends SettingsPage
 
     protected static ?string $navigationGroup = 'SETTINGS';
 
+    protected static ?int $navigationSort  = 7;
 
     protected function getFormSchema(): array
     {
