@@ -49,11 +49,8 @@ trait HeroImageSectionConcern
             ->schema([
                 TextInput::make('columns')->numeric()->default(3)->maxValue(4)->reactive(),
 
-                Grid::make()->schema(function ($get): array {
-                    $sections = [];
-
-                    for ($i = 1; $i <= $get("columns"); $i++) {
-                        $sections[] = Section::make("Column $i")
+                Grid::make()->schema([
+                    Section::make("Column ")
                             ->description("add section connected")
                             ->schema([
                                 Builder::make('sections')->label('Page Sections')
@@ -76,10 +73,8 @@ trait HeroImageSectionConcern
                                                 Checkbox::make('has_contact_form'),
                                             ]),
                                     ])
-                            ]);
-                    }
-                    return $sections;
-                }),
+                            ]),
+                    ]),
 
 
             ]);
