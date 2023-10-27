@@ -80,6 +80,8 @@ class TeamCategoryResource extends Resource
             ])
             ->actions([
                 EditAction::make()
+                    ->slideOver()
+                    ->closeModalByClickingAway(false)
                     ->mountUsing(fn(CompanyTeam $record, ComponentContainer $form) => $form->fill([
 
                         'created_at' => $record->created_At,
