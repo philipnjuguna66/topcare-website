@@ -4,10 +4,13 @@ namespace Appsorigin\Teams\Filament\Resources;
 
 
 use App\Utils\Enums\TeamTemplatesEnum;
+use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\CreateCategoryTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\CreateTeam;
+use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\EditCategoryTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\EditTeam;
-use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListTeam;
+use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListCategoryTeam;
 
+use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\RelationManagers\RolesRelationManager;
 use Appsorigin\Teams\Models\CompanyTeam;
 use Appsorigin\Teams\Models\TeamCategory;
@@ -37,6 +40,8 @@ class TeamResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-user-add';
 
     protected static ?string $navigationLabel = "Teams";
+
+    protected static ?string $navigationGroup = "Teams";
 
     public static function form(Form $form): Form
     {
@@ -107,7 +112,7 @@ class TeamResource extends Resource
 
                             DatePicker::make('created_at')
                                 ->reactive()
-                                ->visible(fn(Page $livewire): bool => $livewire instanceof EditTeam)
+                                ->visible(fn(Page $livewire): bool => $livewire instanceof EditCategoryTeam)
                                 ->required(),
                             FileUpload::make('featured_image')
                                 ->disableLabel(true)
