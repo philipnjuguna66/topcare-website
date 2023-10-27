@@ -82,6 +82,9 @@ class TeamCategoryResource extends Resource
             ])
             ->headerActions([
                 Action::make("Create a team")
+                    ->button()
+                    ->slideOver()
+                    ->closeModalByClickingAway(false)
                     ->form([
                         TextInput::make('name')
                             ->required()
@@ -114,7 +117,7 @@ class TeamCategoryResource extends Resource
                     ->closeModalByClickingAway(false)
                     ->mountUsing(fn(TeamCategory $record, ComponentContainer $form) => $form->fill([
 
-                        'created_at' => $record->created_At,
+                        'created_at' => $record->created_at,
                         'name' => $record->name,
                         'template' => $record->extra['template'],
 
@@ -122,7 +125,7 @@ class TeamCategoryResource extends Resource
                     DatePicker::make('created_at'),
                     TextInput::make('name')
                         ->required()
-                        ->unique('team_categories', 'name'),
+                        ->unique('team_categories', 'name', ignoreRecord: true),
                     Select::make('template')
                         ->options(function () : array {
 
