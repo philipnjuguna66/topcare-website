@@ -1,8 +1,8 @@
-<div class="bg-gray-50 @if($section->extra['bg_white'] )  bg-white @endif">
-    <div class="md:mx-auto md:w-4/5 max-w-7xl px-2 lg:px-8" {{ $animationEffect }}>
-        <div class="grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-3 space-y-4 mt-4 py-4">
+<div class="bg-gray-50 @if($section->extra['bg_white'] )  bg-white @endif md:mt-5 md:pt-16">
+    <div class="mx-auto w-4/5 px-2 lg:px-8" {{ $animationEffect }}>
+        <div class=" max-w-8xl  grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-3 space-y-4 mt-4 py-4">
             @foreach($section->extra['columns_sections'] as $index => $columns)
-               <div class="text-justify">
+               <div class="text-justify max-w-7xl">
                    @foreach($columns as $column)
                        <?php
                            $html = match ($column['type'])
