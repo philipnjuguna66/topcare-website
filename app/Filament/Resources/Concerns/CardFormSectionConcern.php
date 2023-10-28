@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources\Concerns;
 
+use App\Models\Permalink;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 
@@ -29,6 +31,21 @@ trait CardFormSectionConcern
                 TextInput::make('title')->nullable(),
                 FileUpload::make('image')->preserveFilenames()->nullable(),
                 Textarea::make('description')->nullable(),
+                Select::make('project_link')
+                    ->options(function (): array {
+
+                        $options = [];
+
+                        foreach (Permalink::query()->whereType('page')->cursor() as $link) {
+
+                            $options[$link->slug] = $link->linkable?->name;
+
+                        }
+
+                        return $options;
+                    })
+                    ->searchable()
+                    ->preload(),
                 Checkbox::make('has_modal')->label('View Description on a Modal')
                 ->default(false),
             ])

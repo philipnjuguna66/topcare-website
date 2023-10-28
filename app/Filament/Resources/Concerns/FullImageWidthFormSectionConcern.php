@@ -48,7 +48,7 @@ trait FullImageWidthFormSectionConcern
 
             Repeater::make('images')->schema([
                 FileUpload::make('image')->preserveFilenames()->required(),
-                TextInput::make('url'),
+                TextInput::make('description'),
             ]),
 
         ]);
