@@ -112,7 +112,7 @@ class TeamResource extends Resource
 
                             DatePicker::make('created_at')
                                 ->reactive()
-                                ->visible(fn(Page $livewire): bool => $livewire instanceof EditCategoryTeam)
+                                ->visible(fn(Page $livewire): bool => $livewire instanceof EditTeam)
                                 ->required(),
                             FileUpload::make('featured_image')
                                 ->disableLabel(true)
