@@ -147,9 +147,9 @@ class ProjectResource extends Resource
                 ]),
                 Group::make()->label('SEO SETTINGS')->schema([
                     Section::make('SEO SETTINGS')->schema([
-                        TextInput::make('meta_title'),
-                        TextInput::make('slug'),
-                        Textarea::make('meta_description'),
+                        TextInput::make('meta_title')->required(),
+                        TextInput::make('slug')->required(),
+                        Textarea::make('meta_description')->required()->maxLength(160),
                         Forms\Components\DateTimePicker::make('created_at')
                             ->visible(fn($livewire) => $livewire instanceof EditProject)
 
