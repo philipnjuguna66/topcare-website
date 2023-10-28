@@ -26,6 +26,7 @@ trait FullImageWidthFormSectionConcern
     {
         return Block::make('gallery_section')->schema([
             TextInput::make('heading'),
+            TextInput::make('columns')->default(3)->maxValue(4),
             Select::make('type')
                 ->options([
                     'slider' => 'Slider',
