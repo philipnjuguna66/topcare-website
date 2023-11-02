@@ -6,7 +6,7 @@
         @meta("description", $page->meta_description)
     @endpush
 
-    <div class="md:pt-32">
+    <div class="md:pt-32 py-20">
         @foreach($page->sections as $section)
 
             @php

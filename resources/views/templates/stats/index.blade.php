@@ -71,7 +71,7 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
 
 
 <div class="md:hidden">
-    <div class="bg-primary-600 py-12 my-auto">
+    <div class="bg-gray-950 py-12 my-auto">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8 z-2">
             <div class="mx-auto max-w-7xl lg:max-w-none">
