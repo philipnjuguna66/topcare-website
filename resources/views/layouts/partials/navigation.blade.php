@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50">
         <div class="max-w-screen-xl flex flex-row flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center hidden md:block">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class="h-8  md:h-20 mr-3" alt="{{ $options?->name }}" />
