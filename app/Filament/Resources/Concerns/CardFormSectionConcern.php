@@ -36,7 +36,7 @@ trait CardFormSectionConcern
 
                         $options = [];
 
-                        foreach (Permalink::query()->whereType('page')->cursor() as $link) {
+                        foreach (Permalink::query()->cursor() as $link) {
 
                             $options[$link->slug] = $link->linkable?->name;
 
