@@ -2,7 +2,7 @@
 
     $header = app(\App\Settings\HeaderSettings::class);
 
-@endphp
+ @endphp
 
 <div class="bg-secondary-900 text-white fixed top-0 left-0 right-0 z-50 mt-0 pt-0" x-data="{ open: false }">
     <div class=" mx-auto w-4/5 lg:max-w-7xl hidden md:block">
