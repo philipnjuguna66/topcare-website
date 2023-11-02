@@ -7,11 +7,12 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
     >
 
 
-        @dump($section->extra['bg_image'])
 
     </div>
     <div class="mx-auto max-w-8xl px-6 lg:px-4 z-2 absolute md:left-[50%] md:top-[50%]" style="transform: translate(-50%, -50%); ">
         <div class="">
+            @dump($section->extra['bg_image'])
+
             <div class="text-center text-white">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
                 <p class="mt-4 text-lg leading-8 ">{{ $section->extra['subheading'] }}</p>
