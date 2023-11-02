@@ -7,6 +7,7 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url($section->extr
     >
 
 
+        @dump($section->extra['bg_image'])
 
     </div>
     <div class="mx-auto max-w-8xl px-6 lg:px-4 z-2 absolute md:left-[50%] md:top-[50%]" style="transform: translate(-50%, -50%); ">
