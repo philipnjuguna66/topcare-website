@@ -36,7 +36,7 @@ class LeadCreatedListener implements ShouldQueue
 
 
 
-        (new TelegramBot())->sendMessage($event->message);
+       // (new TelegramBot())->sendMessage($event->message);
 
 
     }
