@@ -10,9 +10,9 @@
         @foreach($page->sections as $section)
 
             @php
-                $animationEffect = new \Illuminate\Support\HtmlString('data-aos="fade-right" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
+                $animationEffect = "";
                 if ($loop->even){
-                     $animationEffect = new \Illuminate\Support\HtmlString('data-aos="fade-left" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
+                     $animationEffect = "";
                 }
             @endphp
 
