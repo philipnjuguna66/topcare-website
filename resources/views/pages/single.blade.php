@@ -18,13 +18,9 @@
 
             @endphp
 
-            @if($loop->first)
-               <div class="">
                    @php
                        view($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])->render();
                    @endphp
-               </div>
-            @endif
 
         @endforeach
 
