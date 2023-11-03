@@ -50,6 +50,9 @@ class BookSiteVisit extends Component implements HasForms
                         ->maxLength(10)
                         ->tel()
                         ->numeric(),
+                    DatePicker::make('date')
+                        ->helperText('When will you view the plots?')
+                        ->required(),
                     TextInput::make('branch')
                         ->label('Location')
                         ->placeholder("Location Interested")
@@ -62,23 +65,21 @@ class BookSiteVisit extends Component implements HasForms
     public function bookVisit()
     {
 
-
         $data = $this->form->getState();
 
         $phone = $data['phone_number'];
 
-        $message = $data['name'] . " Booked a visit, Phone Number:  {$phone}";
-
+        $message = $data['name'] . " Booked a visit, Phone Number:  {$phone} on {$data['date']}";
 
         $branch = "";
+
         if (!is_null($this->page)) {
+
             $message .= " to view {$this->page->title}";
 
             $branch = $this->page
                 ->branches()
                 ->implode('name', ',');
-
-
         }
         if (isset($data['branch'])) {
 
@@ -91,8 +92,6 @@ class BookSiteVisit extends Component implements HasForms
 
         try {
 
-
-
             if (str($this->phone_number)->length() < 10)
             {
                 throw  new \Exception("Phone Number no valid");
@@ -102,22 +101,12 @@ class BookSiteVisit extends Component implements HasForms
                 throw  new \Exception("Phone Number no valid");
             }
 
-
             $lead = Lead::create([
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
-                'date' => new Carbon(),
+                'date' => Carbon::parse($data['date']),
                 'page' => isset($this->page->title) ? $this->page->title : $branch,
             ]);
-
-
-          /*  $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
-                'tel' => $phone,
-                'branch' => $branch,
-                'name' => $data['name'],
-                'message' => $message,
-            ]);*/
-
 
             event(new LeadCreatedEvent(
                 lead: $lead,
@@ -140,6 +129,7 @@ class BookSiteVisit extends Component implements HasForms
                 ->send();
 
         } catch (\Exception $e) {
+
             return Notification::make()
                 ->danger()
                 ->title('Something went wrong')
