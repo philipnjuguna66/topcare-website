@@ -62,8 +62,8 @@
     </div>
 
 
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50">
-        <div class="grid grid-cols-2 gap-2 justify-between">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50 h-20">
+        <div class="grid grid-cols-2 gap-2 justify-between mx-auto ">
             <a href="/" class="flex items-center">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class=" h-8  md:h-12 md:w-44 object-cover mr-3" alt="{{ $options?->name }}" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ $options?->name }}</span>
@@ -74,7 +74,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+            <div class="hidden justify-end md:block md:w-auto" id="navbar-multi-level">
 
                 @include('layouts.partials._menu')
 
