@@ -63,7 +63,7 @@
 
 
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50 h-20 py-2">
-        <div class="grid grid-cols-2 gap-2 justify-between mx-auto ">
+        <div class="grid grid-cols-2 gap-2 justify-between mx-auto  w-4/5">
             <a href="/" class="flex items-center">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class=" h-8  md:h-12 md:w-44 object-cover mr-3" alt="{{ $options?->name }}" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ $options?->name }}</span>
