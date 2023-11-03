@@ -19,7 +19,7 @@
             @endphp
 
             @if($loop->first)
-               <div class="mt-32 py-23">
+               <div class="">
                    @php
                        view($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])->render();
                    @endphp

@@ -5,7 +5,7 @@
 @endphp
 
 <div class="bg-secondary-900 text-whitemt-0 pt-0" x-data="{ open: false }">
-    <div class=" mx-auto w-4/5 lg:max-w-7xl hidden md:block">
+    <div class=" mx-auto w-4/5 lg:max-w-7xl hidden md:block text-white">
         <div class=" py-2 md:py-2 flex  flex-col md:flex-row  md:justify-between">
 
             <div class="flex flex-col md:flex-row  gap-4 mx-auto max-w-4xl">
@@ -68,7 +68,7 @@
     </div>
 
 
-    <nav class="sticky  top-0 left-0 right-0 z-50  bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50">
+    <nav class="sticky py-2 top-0 left-0 right-0 z-50  bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50">
         <div class="flex flex-row justify-between mx-auto max-w-7xl w-4/5 ">
             <a href="/" class="flex items-center">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class="h-8 md:h-16 mr-3" alt="{{ $options?->name }}" />
