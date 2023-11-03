@@ -24,8 +24,6 @@
                     </div>
                 @endforeach
 
-
-
             </div>
            <div class="hidden ">
                 <div class="text-white">
@@ -65,7 +63,6 @@
 
                 </div>
             </div>
-
 
         </div>
     </div>
