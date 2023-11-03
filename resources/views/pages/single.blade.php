@@ -7,23 +7,16 @@
     @endpush
 
     <div class="">
-        @foreach($page->sections as $section)
+    @foreach($page->sections as $section)
 
-            @php
-                $animationEffect = new \Illuminate\Support\HtmlString(' loading="lazy" data-aos="fade-right" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
-                if ($loop->even){
-                     $animationEffect = new \Illuminate\Support\HtmlString(' loading="lazy" data-aos="fade-left" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
-                }
+        @php
+            $animationEffect = new \Illuminate\Support\HtmlString('data-aos="fade-right" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
+            if ($loop->even){
+                 $animationEffect = new \Illuminate\Support\HtmlString('data-aos="fade-left" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
+            }
+        @endphp
 
-
-            @endphp
-
-                   @php
-                       view($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])->render();
-                   @endphp
-
-        @endforeach
-
-
+        @include($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])
+    @endforeach
 
 </x-guest-layout>
