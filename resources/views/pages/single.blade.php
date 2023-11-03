@@ -6,7 +6,7 @@
         @meta("description", $page->meta_description)
     @endpush
 
-    <div class="md:pt-32 py-20">
+    <div class="">
         @foreach($page->sections as $section)
 
             @php
@@ -14,10 +14,20 @@
                 if ($loop->even){
                      $animationEffect = new \Illuminate\Support\HtmlString(' loading="lazy" data-aos="fade-left" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
                 }
+
+
             @endphp
-            @include($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])
+
+            @if($loop->first)
+               <div class="mt-32 py-23">
+                   @php
+                       view($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])->render();
+                   @endphp
+               </div>
+            @endif
+
         @endforeach
 
-    </div>
+
 
 </x-guest-layout>
