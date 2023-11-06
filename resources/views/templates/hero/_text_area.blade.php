@@ -1,7 +1,7 @@
-<div class="px-2 mt-5 ">
+<div class="mt-5 ">
 
-    <div class="prose py-4">
-        {{ str($html)->toHtmlString() }}
+    <div class="prose-md  sm:text-justify py-4">
+        {{ str($html)->trim(' ')->toHtmlString() }}
     </div>
 
 

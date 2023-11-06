@@ -20,6 +20,7 @@
                             />
 
                             <a href="{{ $phone['link'] }} "> {{ $phone['label'] }} </a>
+
                         </div>
                     </div>
                 @endforeach
@@ -69,9 +70,9 @@
 
 
     <nav class="sticky py-2 top-0 left-0 right-0 z-50  bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50">
-        <div class="flex flex-row justify-between mx-auto max-w-7xl w-4/5 overflow-hidden">
+        <div class="flex flex-row justify-between mx-auto max-w-7xl items-center  sm:w-4/5 overflow-hidden flex-wrap">
             <a href="/" class="flex items-center">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class="h-8 md:h-16 mr-3" alt="{{ $options?->name }}" />
+                <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class="h-12 md:h-20 mr-3" alt="{{ $options?->name }}" />
 
             </a>
             <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-multi-level" aria-expanded="false">
@@ -80,7 +81,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
-            <div class="hidden md:block md:w-auto sm:w-full" id="navbar-multi-level">
+            <div class=" hidden  w-full md:block md:w-auto" id="navbar-multi-level">
 
                 @include('layouts.partials._menu')
 
