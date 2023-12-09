@@ -108,6 +108,11 @@ class BookSiteVisit extends Component implements HasForms
                 'page' => isset($this->page->title) ? $this->page->title : $branch,
             ]);
 
+            Http::post('https://shekinahhub.com//api/v1/crm/create', [
+                'phone_number' => $data['phone_number'],
+                'source' => "website",
+            ]);
+
             event(new LeadCreatedEvent(
                 lead: $lead,
                 branch: $branch,
