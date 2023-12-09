@@ -28,7 +28,7 @@ class LeadCreatedListener implements ShouldQueue
     {
 
 
-       $response = Http::post('https://topcarelands.co.ke/api/v1/crm/create', [
+       $response = Http::post('https://shekinahhub.com//api/v1/crm/create', [
             'phone_number' => $event->phone,
             'source' => "website",
         ]);
