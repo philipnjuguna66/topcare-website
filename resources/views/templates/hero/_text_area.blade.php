@@ -1,6 +1,6 @@
-<div class="mt-5 ">
+<div class="">
 
-    <div class="prose-md  sm:text-justify py-4">
+    <div class="prose  sm:text-justify py-4">
         {{ str($html)->trim(' ')->toHtmlString() }}
     </div>
 
