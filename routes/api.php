@@ -35,7 +35,7 @@ Route::get('posts', function () {
     }
 
 
-    foreach (\App\Models\Team::all() as $team)
+    foreach (\Appsorigin\Teams\Models\CompanyTeam::all() as $team)
     {
         event(new BlogCreatedEvent($team));
 
