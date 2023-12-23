@@ -1,5 +1,5 @@
 <div class="bg-gray-50 md:py-12 md:mt-3 @if($section->extra['bg_white'] )  bg-white @endif">
-    <div class="mx-auto w-4/5 max-w-7xl  lg:px-8">
+    <div class="md:mx-auto md:w-4/5 max-w-7xl  lg:px-8">
         <div class="  grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-x-1 space-y-4 mt-4 py-4">
             @foreach($section->extra['columns_sections'] as $index => $columns)
                <div class="md:text-justify max-w-7xl">
