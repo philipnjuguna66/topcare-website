@@ -1,4 +1,4 @@
-<div class="relative bg-gray-950  hidden md:block"  {{ $animationEffect }}>
+<div class="relative bg-gray-950/30  hidden md:block"  {{ $animationEffect }}>
     <div class=" h-[500px] py-32 sm:py-32 my-auto filter blur-sm " style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
