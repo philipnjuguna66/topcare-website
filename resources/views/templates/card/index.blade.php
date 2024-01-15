@@ -22,9 +22,18 @@
                         <div class="max-w-xl px-2">
                             <div class="group relative py-4">
                                 <h3 class="lg:mt-3 text-lg font-semibold leading-6 group-hover:text-gray-600">
+                                    <span class="absolute inset-0"></span>
 
-                                        <span class="absolute inset-0"></span>
-                                        {{ $card['title'] }}
+
+                                        <a href="{{ url($card['project_link']) ?? "#" }}"
+                                           class="button bg-primary-500  text-gray-50"
+                                        >
+
+                                            {{ $card['title'] }}
+                                        </a>
+
+
+
                                 </h3>
 
 
@@ -35,6 +44,8 @@
                                         {{ $card['description'] }}
                                     </p>
                                 @endif
+
+
 
 
 
