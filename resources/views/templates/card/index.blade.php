@@ -26,7 +26,7 @@
 
 
                                         <a href="{{ url($card['project_link']) ?? "#" }}"
-                                           class="button bg-primary-500  text-gray-50"
+
                                         >
 
                                             {{ $card['title'] }}
