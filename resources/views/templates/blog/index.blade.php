@@ -17,7 +17,7 @@
                                 <a
                                     wire:navigate
                                     href="{{ route('permalink.show', $section->extra['blog_link']) }}"
-                                    class="button">
+                                    class="button bg-secondary-500">
                                     View more Blogs <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
