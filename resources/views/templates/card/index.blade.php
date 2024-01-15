@@ -21,20 +21,15 @@
 
                         <div class="max-w-xl px-2">
                             <div class="group relative py-4">
-                                <h3 class="lg:mt-3 text-lg font-semibold leading-6 group-hover:text-gray-600">
-                                    <span class="absolute inset-0"></span>
+                                <a class="lg:mt-3 text-lg font-semibold leading-6 group-hover:text-gray-600" href="{{ url($card['project_link']) ?? "#" }}">
 
 
-                                        <a href="{{ url($card['project_link']) ?? "#" }}"
-
-                                        >
 
                                             {{ $card['title'] }}
-                                        </a>
 
 
 
-                                </h3>
+                                </a>
 
 
 
