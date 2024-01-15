@@ -1,4 +1,4 @@
-<div class="py-8 md:py-12">
+<div class="py-2 md:py-4">
 
     <div class="grid  border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:grid-cols-2">
         @foreach($testimonials as $testimonial)

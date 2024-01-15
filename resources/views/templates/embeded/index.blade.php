@@ -1,11 +1,11 @@
 <section  class=" @if($section->extra['bg_white']  ) bg-white @endif">
-    <div class=" py-8 md:py-12 mx-auto md:w-4/5">
+    <div class=" py-2 md:py-4 mx-auto md:w-4/5">
         <div {{ $animationEffect }}  class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $title }}</h2>
                 <p class="mt-2 text-lg leading-8 text-gray-600">{{ $description }}</p>
             </div>
-            <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <div class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
 
                 @foreach(range(0,2) as $range)
