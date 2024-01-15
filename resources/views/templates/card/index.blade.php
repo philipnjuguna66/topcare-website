@@ -10,12 +10,12 @@
 
 
                 @foreach($section->extra['cards'] as $card)
-                    <article class="shadow rounded-md px-4 py-4 mx-auto">
+                    <article class="shadow rounded-md  mx-auto">
 
                         @if( isset($card['image']) && ! empty($card['image']))
                         <div class="relative w-full justify-center text-center">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($card['image']) }}" loading="lazy" alt="{{ $card['title'] }}"
-                                 class="object-cover">
+                                 class="object-cover -px-4 -py-4">
                         </div>
                         @endif
 
