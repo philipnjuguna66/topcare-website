@@ -1,4 +1,4 @@
-<div class="relative  hidden md:block"  {{ $animationEffect }}>
+<div class="relative bg-gray-950  hidden md:block"  {{ $animationEffect }}>
     <div class=" h-[500px] py-32 sm:py-32 my-auto filter blur-sm " style="background-position: center center;
  background-size: cover;
 background-repeat: no-repeat;
@@ -6,7 +6,7 @@ height: 500px;
 background-image: url({{ \Illuminate\Support\Facades\Storage::url( urldecode($section->extra['bg_image']) ) }});"
     >
     </div>
-    <div class="mx-auto bg-gray-950 max-w-8xl px-6 lg:px-4 z-2 absolute md:left-[50%] md:top-[50%]" style="transform: translate(-50%, -50%); ">
+    <div class="mx-auto  max-w-8xl px-6 lg:px-4 z-2 absolute md:left-[50%] md:top-[50%]" style="transform: translate(-50%, -50%); ">
         <div class="">
             <div class="text-center text-white">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
@@ -25,7 +25,6 @@ background-image: url({{ \Illuminate\Support\Facades\Storage::url( urldecode($se
                                 x-intersect:leave="current=0"
                                 x-transition>
                             </dd>
-
 
                             @if($stat['has_plus_icon'])
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto mt-2 font-bold">
