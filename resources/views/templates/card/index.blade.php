@@ -21,7 +21,7 @@
 
                         <div class="max-w-xl px-2">
                             <div class="group relative py-4">
-                                <a class="lg:mt-3 text-lg font-semibold leading-6 group-hover:text-gray-600" href="{{ url($card['project_link']) ?? "#" }}">
+                                <a class="lg:mt-3 text-lg font-semibold leading-6 group-hover:text-gray-600" href="{{ ($card['project_link']) ?? "#" }}">
 
 
 
