@@ -114,7 +114,7 @@ class BookSiteVisit extends Component implements HasForms
             Http::post('https://shekinahhub.com/api/v1/crm/create', [
                 'phone_number' => $data['phone_number'],
                 'source' => "website",
-                'description' => $message,
+                'description' =>" Booked a visit, {$data['date']} to view {$data['branch']} projects"
             ]);
 
 
