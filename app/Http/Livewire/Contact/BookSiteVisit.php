@@ -94,18 +94,18 @@ class BookSiteVisit extends Component implements HasForms
 
             if (str($this->phone_number)->length() < 10)
             {
-                throw  new \Exception("Phone Number no valid");
+                throw  new \Exception("Phone Number not valid");
             }
             if (str($this->phone_number)->length() > 10)
             {
-                throw  new \Exception("Phone Number no valid");
+                throw  new \Exception("Phone Number not valid");
             }
 
             $lead = Lead::create([
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
                 'date' => Carbon::parse($data['date']),
-                'page' => isset($this->page->title) ? $this->page->title : $branch,
+                'page' =>  $branch,
             ]);
 
             /**
@@ -114,7 +114,7 @@ class BookSiteVisit extends Component implements HasForms
             Http::post('https://shekinahhub.com/api/v1/crm/create', [
                 'phone_number' => $data['phone_number'],
                 'source' => "website",
-                'description' =>" Booked a visit, {$data['date']} to view {$data['branch']} projects"
+                'description' =>" Booked a visit, {$data['date']} to view {$branch} projects"
             ]);
 
 
