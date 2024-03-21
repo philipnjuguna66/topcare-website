@@ -55,7 +55,7 @@ class BookSiteVisit extends Component implements HasForms
                         ->required(),
                     TextInput::make('branch')
                         ->label('Location')
-                        ->placeholder("Location Interested")
+                        ->helperText("Location Interested")
                         ->required(fn(): bool => !filled($this->page))
                         ->hidden(fn(): bool => filled($this->page))
                 ])->inlineLabel(),
