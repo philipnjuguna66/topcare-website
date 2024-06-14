@@ -13,6 +13,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('posts', function () {
 
+    $result = \Illuminate\Support\Facades\Process::run('dh -f');
+
+    dump( $result->output());
+
+    \Illuminate\Support\Facades\Process::run('service nginx restart -S');
+
     foreach (\App\Models\Page::all() as $page)
     {
         event(new \App\Events\PageCreatedEvent($page));
